@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Quiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <h1>Financial Quiz</h1>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h3>Test your financial knowledge!</h3>
+            <form method="POST">
+                <h4>1. What is the most effective way to save for retirement?</h4>
+                <label>
+                    <input type="radio" name="answer1" value="a" {% if answers['answer1'] == 'a' %}checked{% endif %}> Keeping money in a savings account.
+                </label><br>
+                <label>
+                    <input type="radio" name="answer1" value="b" {% if answers['answer1'] == 'b' %}checked{% endif %}> Investing in the stock market.
+                </label><br>
+                <label>
+                    <input type="radio" name="answer1" value="c" {% if answers['answer1'] == 'c' %}checked{% endif %}> Contributing to a 401(k) or IRA account.
+                </label><br><br>
+
+                <h4>2. What’s the best way to diversify your investment portfolio?</h4>
+                <label>
+                    <input type="radio" name="answer2" value="a" {% if answers['answer2'] == 'a' %}checked{% endif %}> Keeping all your investments in one asset.
+                </label><br>
+                <label>
+                    <input type="radio" name="answer2" value="b" {% if answers['answer2'] == 'b' %}checked{% endif %}> A mix of stocks and bonds.
+                </label><br>
+                <label>
+                    <input type="radio" name="answer2" value="c" {% if answers['answer2'] == 'c' %}checked{% endif %}> Trading stocks frequently.
+                </label><br><br>
+
+                <h4>3. How should you deal with debt?</h4>
+                <label>
+                    <input type="radio" name="answer3" value="a" {% if answers['answer3'] == 'a' %}checked{% endif %}> Pay off the high-interest debt first.
+                </label><br>
+                <label>
+                    <input type="radio" name="answer3" value="b" {% if answers['answer3'] == 'b' %}checked{% endif %}> Borrow more money to pay off debt.
+                </label><br>
+                <label>
+                    <input type="radio" name="answer3" value="c" {% if answers['answer3'] == 'c' %}checked{% endif %}> Ignore debt until it's manageable.
+                </label><br><br>
+
+                <h4>4. What is the best way to improve your credit score?</h4>
+                <label>
+                    <input type="radio" name="answer4" value="a" {% if answers['answer4'] == 'a' %}checked{% endif %}> Borrowing as much as you can.
+                </label><br>
+                <label>
+                    <input type="radio" name="answer4" value="b" {% if answers['answer4'] == 'b' %}checked{% endif %}> Paying off loans all at once.
+                </label><br>
+                <label>
+                    <input type="radio" name="answer4" value="c" {% if answers['answer4'] == 'c' %}checked{% endif %}> Paying bills on time and reducing debt.
+                </label><br><br>
+
+                <button type="submit">Submit</button>
+            </form>
+
+            {% if response %}
+                <div id="response">
+                    <h4>{{ response }}</h4>
+                </div>
+            {% endif %}
+
+            <a class="back-btn" href="/">Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>

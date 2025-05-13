@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Check</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <h1>Mental Health Check</h1>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h3>How are you feeling today?</h3>
+            <form method="POST">
+                <label>
+                    <input type="radio" name="mood" value="1"> I'm feeling happy and optimistic.
+                </label><br>
+                <label>
+                    <input type="radio" name="mood" value="2"> I'm feeling stressed and overwhelmed.
+                </label><br>
+                <label>
+                    <input type="radio" name="mood" value="3"> I'm feeling anxious and uneasy.
+                </label><br>
+                <label>
+                    <input type="radio" name="mood" value="4"> I'm feeling sad and unmotivated.
+                </label><br>
+                <label>
+                    <input type="radio" name="mood" value="5"> I'm feeling angry and frustrated.
+                </label><br>
+                <label>
+                    <input type="radio" name="mood" value="6"> I'm feeling lonely and disconnected.
+                </label><br><br>
+
+                <h3>How do you typically cope with stress?</h3>
+                <label>
+                    <input type="radio" name="coping" value="1"> I take things one step at a time and focus on the present.
+                </label><br>
+                <label>
+                    <input type="radio" name="coping" value="2"> I distract myself with activities like watching TV or reading.
+                </label><br>
+                <label>
+                    <input type="radio" name="coping" value="3"> I talk to someone to help process my feelings.
+                </label><br>
+                <label>
+                    <input type="radio" name="coping" value="4"> I tend to suppress my feelings and constantly think about them.
+                </label><br><br>
+
+                <h3>On a scale of 1-4, how stressed are you right now?</h3>
+                <label>
+                    <input type="radio" name="stress_level" value="1"> Not stressed at all.
+                </label><br>
+                <label>
+                    <input type="radio" name="stress_level" value="2"> A little stressed.
+                </label><br>
+                <label>
+                    <input type="radio" name="stress_level" value="3"> Quite stressed.
+                </label><br>
+                <label>
+                    <input type="radio" name="stress_level" value="4"> Very stressed.
+                </label><br><br>
+
+                <button type="submit">Submit</button>
+            </form>
+
+            {% if response %}
+                <div id="response">
+                    <h4>{{ response }}</h4>
+                </div>
+            {% endif %}
+
+            <a class="back-btn" href="/">Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>

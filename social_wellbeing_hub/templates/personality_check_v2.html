@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personality Check</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <h1>Personality Check</h1>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h3>1. How do you usually react to stress?</h3>
+            <form method="POST">
+                <label>
+                    <input type="radio" name="reaction" value="calm"> I stay calm and think things through.
+                </label><br>
+                <label>
+                    <input type="radio" name="reaction" value="quick"> I react quickly and tend to worry.
+                </label><br>
+                <label>
+                    <input type="radio" name="reaction" value="talk"> I talk to others to help manage my stress.
+                </label><br>
+            </div>
+
+            <div class="section">
+                <h3>2. How do you handle conflict with others?</h3>
+                <label>
+                    <input type="radio" name="conflict" value="avoid"> I try to avoid confronting the person.
+                </label><br>
+                <label>
+                    <input type="radio" name="conflict" value="face"> I face the issue directly, even if it's uncomfortable.
+                </label><br>
+                <label>
+                    <input type="radio" name="conflict" value="compromise"> I try to compromise and find a solution that works for everyone.
+                </label><br>
+            </div>
+
+            <div class="section">
+                <h3>3. How do you typically relax after a long day?</h3>
+                <label>
+                    <input type="radio" name="relaxation" value="alone"> I prefer to spend time alone, perhaps reading or listening to music.
+                </label><br>
+                <label>
+                    <input type="radio" name="relaxation" value="socialize"> I enjoy spending time with friends or family to unwind.
+                </label><br>
+                <label>
+                    <input type="radio" name="relaxation" value="active"> I like to engage in physical activity like going for a walk or exercising.
+                </label><br>
+            </div>
+
+            <div class="section">
+                <h3>4. Are you more introverted or extroverted?</h3>
+                <label>
+                    <input type="radio" name="introvert_extrovert" value="introvert"> I am more introverted, I prefer being alone and in small gatherings.
+                </label><br>
+                <label>
+                    <input type="radio" name="introvert_extrovert" value="extrovert"> I am more extroverted, I thrive in social situations.
+                </label><br>
+            </div>
+
+            <div class="section">
+                <h3>5. How do you prefer to make decisions?</h3>
+                <label>
+                    <input type="radio" name="decision_making" value="gut"> I trust my gut and make decisions based on instinct.
+                </label><br>
+                <label>
+                    <input type="radio" name="decision_making" value="logical"> I prefer to analyze avaiable options logically before making a decision.
+                </label><br>
+            </div>
+
+            <button type="submit">Submit</button>
+            {% if response %}
+                <div id="response">
+                    <h4>{{ response }}</h4>
+                </div>
+            {% endif %}
+            <a class="back-btn" href="/">Back to Home</a>
+        </form>
+    </div>
+</body>
+</html>

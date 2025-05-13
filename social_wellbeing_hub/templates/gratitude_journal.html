@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gratitude Journal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <h1>Gratitude Journal</h1>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h3>What are you grateful for today?</h3>
+            <form method="POST">
+                <input type="text" name="gratitude" placeholder="Write something you're grateful for..." required><br>
+                <button type="submit">Submit</button>
+            </form>
+
+            {% if response %}
+                <div id="response">
+                    <h4>{{ response }}</h4>
+                </div>
+            {% endif %}
+
+            <a class="back-btn" href="/">Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>

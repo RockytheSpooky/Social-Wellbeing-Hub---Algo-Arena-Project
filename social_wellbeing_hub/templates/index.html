@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Wellbeing Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <h1>Welcome to the Social Wellbeing Hub</h1>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2>Mental Health Check</h2>
+            <p>Take a moment to reflect on your current mental state.</p>
+            <a href="/mental_health">
+                <button>Start Mental Health Check</button>
+            </a>
+        </div>
+
+        <div class="section">
+            <h2>Gratitude Journal</h2>
+            <p>Write down something you're grateful for today.</p>
+            <a href="/gratitude_journal">
+                <button>Start Gratitude Journal</button>
+            </a>
+        </div>
+
+        <div class="section">
+            <h2>Personality Check</h2>
+            <p>Take the Personality Check quiz to learn more about yourself!</p>
+            <a href="/personality_check">
+                <button>Start Personality Check</button>
+            </a>
+        </div>
+
+        <div class="section">
+            <h2>Financial Quiz</h2>
+            <p>Test your financial knowledge and learn some tips.</p>
+            <a href="/financial_quiz">
+                <button>Start Financial Quiz</button>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
