@@ -22,7 +22,7 @@ This web app offers simple, interactive modules that supports self-awareness, gr
 - 💰 Financial Literacy Quiz 
   Educates users on basic personal finance topics like saving, budgeting, and smart spending.
 
-## Tech used
+## Technologies used
 
 - Python
 - Flask
